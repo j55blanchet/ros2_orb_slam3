@@ -11,11 +11,14 @@ A ROS2 package for ORB SLAM3 V1.0. Focus is on native integration with ROS2 ecos
   * Eigen 3.3.0, OpenCV 4.2, latest release of Pangolin
 * Comes with a small test image sequence from EuRoC MAV dataset (MH05) to quickly test installation
 * For newcomers in ROS2 ecosystem, this package serves as an example of building a shared cpp library and also a package with both cpp and python nodes.
+* May not build or work correctly in **resource constrainted hardwares** such as Raspberry Pi 4, Jetson Nano
 
-## Tested platforms
-* Ubuntu 22.04 LTS (Jammy Jellyfish) and RO2 Humble Hawksbill (LTS)
+## Testing platforms
+1. Intel i5-9300H, x86_64 bit architecture , Ubuntu 22.04 LTS (Jammy Jellyfish) and RO2 Humble Hawksbill (LTS)
+2. AMD Ryzen 5600X, x86_64 bit architecture, Ubuntu 22.04 LTS (Jammy Jellyfish) and RO2 Humble Hawksbill (LTS)
 
 ## 1. Prerequisitis
+The following softwares must be installed before this package can be installed and used correctly
 
 ### Eigen3
 
@@ -32,8 +35,8 @@ We install Pangolin system wide and configure the dynamic library path so the ne
 cd ~/Documents
 git clone https://github.com/stevenlovegrove/Pangolin
 cd Pangolin
-./scripts/install_prerequisites.sh --dry-run recommended [Check what recommended softwares needs to be installed]
-./scripts/install_prerequisites.sh recommended [Install recommended dependencies]
+./scripts/install_prerequisites.sh --dry-run recommended # Check what recommended softwares needs to be installed
+./scripts/install_prerequisites.sh recommended # Install recommended dependencies
 cmake -B build
 cmake --build build -j4
 sudo cmake --install build
@@ -76,7 +79,7 @@ cd ~
 mkdir -p ~/ros2_test/src
 cd ~/ros2_test/src
 git clone https://github.com/Mechazo11/ros2_orb_slam3.git
-cd .. [make sure you are in ~/ros2_ws root directory]
+cd .. # make sure you are in ~/ros2_ws root directory
 ```
 3. For this repo, the name of the workspace must be ```ros2_test```. You may change it later (marked with "!Change this ...." comments found in pertinent .hpp and .py files.
 
@@ -118,4 +121,4 @@ Thank you for taking the time in checking this project out. I hope it helps you 
 - [x] Show short video example for monocular mode
 - [ ] Stereo mode example
 - [ ] RGBD mode example
-- [ ] Add ORB SLAM3 bibtex and my upcoming paper bibtex
+- [ ] Add ORB SLAM3 bibtex and my IEE AIM 2024 paper
